@@ -7,7 +7,6 @@ import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-
 // Câu lệnh này của Junit báo hiệu rằng sẽ cần loop qua tập data để lấy cặp input
 @RunWith(value = Parameterized.class)
 public class MathUtilDDTTest {
@@ -16,21 +15,20 @@ public class MathUtilDDTTest {
     @Parameterized.Parameters
     public static Object[][] initData() {
         return new Integer[][]{
-                                {0, 1},
-                                {1, 1},
-                                {2, 2},
-                                {3, 6},
-                                {4, 24},
-                                {5, 120},
-        };
+            {0, 1},
+            {1, 1},
+            {2, 2},
+            {3, 6},
+            {4, 24},
+            {5, 120},};
     }
-    
+
     @Parameterized.Parameter(value = 0)
     public int n; //biến map với value của cột 0 của mảng
-    
+
     @Parameterized.Parameter(value = 1)
     public long expected;  // kieeur long vi nos la gia tri cua ham getF()
-    
+
     @Test
     public void testGetFactorialGivenRightArgumentReturnsWell() {
         Assert.assertEquals(expected, MathUtil.getFactorial(n));
